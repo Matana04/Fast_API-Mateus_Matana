@@ -62,3 +62,26 @@ def Bhaskara(conta : num):
 
 #Parte 3 - Bhaskara
 
+class letra(BaseModel):
+   frase : str
+
+@app.post("/conta")
+def ContaLetra(contal : letra):
+    v = 0
+    c = 0
+    o = 0
+    for i in range(0, len(contal.frase)):
+        caractere = contal.frase[i]
+        if caractere.lower() in 'aeiou':
+            v = v+1
+        elif caractere.lower() in ' ':
+            c = c+1
+        else:
+            o = o+1
+            
+    return {
+        "frase" : contal.frase,
+        "vogais": v,
+        "espacos": c,
+        "outros": o
+    }
