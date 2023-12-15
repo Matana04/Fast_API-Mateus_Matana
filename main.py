@@ -13,7 +13,7 @@ def index():
 #Parte 1 - Quadrados
 
 
-@app.get("/quadrado")
+@app.get("/quadrados")
 def listaQuadrados(max : Optional[int] = 10):
    quadrados = []
    for i in range(1, max+1):
@@ -60,7 +60,7 @@ def Bhaskara(conta : num):
     }
 
 
-#Parte 3 - Bhaskara
+#Parte 4 - Conta
 
 class letra(BaseModel):
    frase : str
